@@ -132,6 +132,7 @@ void convert_chroma_to_420()
       cb += width >> 1;
       cr += width >> 1;
     }
+    break;
   case 3:
     cb = &y_data[width * height];
     cr = &cb[width * height >> 2];
