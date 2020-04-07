@@ -1,2 +1,4 @@
-yay
-yay.o
+*.o
+.vs
+build/
+
