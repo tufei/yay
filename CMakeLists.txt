@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.17)
 project(yay)
 
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules")
+
 ###############################################################################
 ## file globbing ##############################################################
 ###############################################################################
@@ -55,7 +57,7 @@ target_compile_options(yay PUBLIC -Wall)
 
 # Add the include paths and link dependencies for project.
 function(sdl_show TARGET)
-  foreach(PKG SDL SDL_IMAGE)
+    foreach(PKG SDL2 SDL2_image)
     find_package(${PKG} QUIET)
     if(${PKG}_FOUND)
       target_include_directories(${TARGET} PRIVATE ${${PKG}_INCLUDE_DIR})
